@@ -26,7 +26,9 @@ spring:
 #fetch-registry: false  #要不要去注册中心获取其他服务的地址
 eureka:
   instance:
+    #eukeka控制台这个实例的名字
     instance-id: payment8002
+    #eureka控制台移动显示地址
     prefer-ip-address: true
   client:
     #表示自己注册中心EurekaServer默认为ture

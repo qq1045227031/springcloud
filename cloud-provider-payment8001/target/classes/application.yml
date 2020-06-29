@@ -4,6 +4,7 @@ server:
 spring:
   #进入eureka的名称
   application:
+    #服务的名称，注意如果是多集群的一个服务名字要一样！
     name: cloud-payment-service
 #  zipkin:
 #    base-url: http://localhost:9411
@@ -26,11 +27,13 @@ spring:
 #fetch-registry: false  #要不要去注册中心获取其他服务的地址
 eureka:
   instance:
+    # 在eureka控制台的名字
     instance-id: payment8001
+    #在eureka控制台鼠标移动显示的名称
     prefer-ip-address: true
-    #Eureka客户端想服务端发送心跳的时间间隔，单位是秒
+    #Eureka客户端想服务端发送心跳的时间间隔，单位是秒   租约续订间隔（秒）：1
     lease-renewal-interval-in-seconds: 1
-    #Eureka服务端在收到最后一次心跳的等待时间上线，单位s超时剔除
+    #Eureka服务端在收到最后一次心跳的等待时间上线，单位s超时剔除   租约到期间隔（秒）：1
     lease-expiration-duration-in-seconds: 2
   client:
     #表示自己注册中心EurekaServer默认为ture
